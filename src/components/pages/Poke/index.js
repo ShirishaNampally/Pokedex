@@ -9,9 +9,8 @@ import './style.css';
 import ReactPaginate from 'react-paginate';
 
 
-
 const INITAL_POKEMON_LIMIT = 100;
-const ITEMS_PER_PAGE = 9;
+const ITEMS_PER_PAGE = 8;
 const INITAL_PAGE_COUNT = Math.ceil(INITAL_POKEMON_LIMIT / ITEMS_PER_PAGE );
 
 function Poke() {
@@ -19,7 +18,7 @@ function Poke() {
     <div>
       <section className="py-5" style={{ backgroundColor: "#000" }}>
         <div className="container">
-          <h1>Pokedex</h1>
+          <h1 className="animate-charcter text-center">Pokedex</h1>
           {/* search bar */}
           <div className="row">
             <div className="col-md-2">
