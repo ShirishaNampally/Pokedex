@@ -16,7 +16,7 @@ const INITAL_PAGE_COUNT = Math.ceil(INITAL_POKEMON_LIMIT / ITEMS_PER_PAGE );
 function Poke() {
   return (
     <div>
-      <section className="" style={{ backgroundColor: "#000" }}>
+      <section style={{ backgroundColor: "#000" }}>
         <div className="container">
           <h1 className="animate-charcter text-center">Pokedex</h1>
           {/* search bar */}

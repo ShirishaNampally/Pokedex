@@ -6,7 +6,7 @@ import Table from 'react-bootstrap/Table';
 
 function PokeCard() {
     return (
-        <div >
+        <div>
             {/* section1 */}
             <section>
                 <div className="container">
@@ -14,7 +14,7 @@ function PokeCard() {
                         <div class="col-12">
                             <h2>bulbasaur</h2>
                         </div>
-                        <Table striped bordered hover>
+                        <Table striped bordered hover variant="dark">
                             {/* <thead>
                                 <tr>
                                     <th>#</th>
@@ -65,13 +65,23 @@ function PokeCard() {
                                     <td>stats:</td>
                                     <td>bulbasaur evolves into ivysaur</td>
                                 </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>weight:</td>
+                                    <td>bulbasaur evolves into ivysaur</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>stats:</td>
+                                    <td>bulbasaur evolves into ivysaur</td>
+                                </tr>
                             </tbody>
                         </Table>
 
                     </div>
 
                 </div>
-            </section>
+            </section><br/><br/><br/><br/><br/><br/><br/>
         </div>
     );
 }
