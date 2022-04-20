@@ -6,10 +6,9 @@ import PokeCard from './components/pages/Poke/Pokecard';
 function App() {
   return (
     <BrowserRouter>
-    {/* <Navbar/> */}
       <Switch>
         <Route path="/" exact component={Poke} />
-        <Route path="/poke/pokecard" exact component={PokeCard} />
+        <Route path="/poke/:id" exact component={PokeCard} />
       </Switch>
     </BrowserRouter>
   );

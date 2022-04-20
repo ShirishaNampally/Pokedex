@@ -1,10 +1,39 @@
-import React from 'react';
+import { React, useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import one from '../../../images/Blog/001.png';
 import '../style.css';
 import Table from 'react-bootstrap/Table';
 
-function PokeCard() {
+import Axios from "axios";
+
+
+const Pokedex = require("pokeapi-js-wrapper")
+const P = new Pokedex.Pokedex()
+
+function PokeCard({match}) {
+
+    console.log("Test")
+
+    const [details, setDetails] = useState();
+
+    const preload = () => {
+        Axios(`https://pokeapi.co/api/v2/pokemon/${match.params.id}`, {
+            method: "get"
+        })
+        .then((response) => {
+            console.log("Test")
+            console.log(response);
+            setDetails(response.data);
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+    }
+
+    useEffect(() => {
+        preload();
+    }, []);
+
     return (
         <div>
             {/* section1 */}
@@ -12,23 +41,15 @@ function PokeCard() {
                 <div className="container">
                     <div className="row">
                         <div class="col-12">
-                            <h2>bulbasaur</h2>
+                            <h2>{details && details.name}</h2>
                         </div>
                         <Table striped bordered hover variant="dark">
-                            {/* <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Username</th>
-                                </tr>
-                            </thead> */}
                             <tbody>
                                 <tr>
                                     <td><img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"} alt="pokemon" />
                                         <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"} alt="pokemon" /></td>
                                     <td>ID:</td>
-                                    <td>1</td>
+                                    <td>{details && details.id}</td>
                                 </tr>
                                 <tr>
                                     <td></td>
@@ -48,7 +69,7 @@ function PokeCard() {
                                 <tr>
                                     <td></td>
                                     <td>species:</td>
-                                    <td>bulbasaur</td>
+                                    <td>{details && details.species.name}</td>
                                 </tr>
                                 <tr>
                                     <td></td>
@@ -58,23 +79,19 @@ function PokeCard() {
                                 <tr>
                                     <td></td>
                                     <td>weight:</td>
-                                    <td>bulbasaur evolves into ivysaur</td>
+                                    <td>{details && details.weight}</td>
                                 </tr>
                                 <tr>
                                     <td></td>
                                     <td>stats:</td>
-                                    <td>bulbasaur evolves into ivysaur</td>
+                                    <td>{details && details.stats.length}</td>
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>weight:</td>
-                                    <td>bulbasaur evolves into ivysaur</td>
+                                    <td>height:</td>
+                                    <td>{details && details.height}</td>
                                 </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>stats:</td>
-                                    <td>bulbasaur evolves into ivysaur</td>
-                                </tr>
+                                
                             </tbody>
                         </Table>
 
