@@ -44,6 +44,8 @@ function Poke() {
         preload();
     }, []);
 
+    
+
   return (
     <div>
       <section style={{ backgroundColor: "#000" }}>
@@ -115,163 +117,8 @@ function Poke() {
                 </li>
               </ul>
             </div>
-
-          </div>
-          <div className="row">
-            <div className="col-md-3">
-              <ul class="pokedex">
-                <li className="card grass" style={{ backgroundColor: "#DEFDE0" }}>
-                  <Link to="/poke/pokecard"><img className="card-image" alt="bulbasaur" src={one} /></Link>
-                  <h2 className="card-title">1. Bulbasaur</h2>
-                  <p className="card-subtitle">grass | poison</p>
-                </li>
-              </ul>
-            </div>
-            <div className="col-md-3">
-              <ul class="pokedex">
-                <li className="card grass" style={{ backgroundColor: "#DEFDE0" }}>
-                  <Link to="/poke/pokecard"><img className="card-image" alt="" src={two} /></Link>
-                  <h2 className="card-title">2. Ivysaur</h2>
-                  <p className="card-subtitle">grass | poison</p>
-                </li>
-              </ul>
-            </div>
-            <div className="col-md-3">
-              <ul class="pokedex">
-                <li className="card grass" style={{ backgroundColor: "#DEFDE0" }}>
-                  <Link to="/poke/pokecard"><img className="card-image" alt="" src={three} /></Link>
-                  <h2 className="card-title">3. Venusaur</h2>
-                  <p className="card-subtitle">grass | poison</p>
-                </li>
-              </ul>
-            </div>
-            <div className="col-md-3">
-              <ul class="pokedex">
-                <li className="card fire" style={{ backgroundColor: "#FDDFDF" }}>
-                  <Link to="/poke/pokecard"><img className="card-image" alt="" src={four} /></Link>
-                  <h2 className="card-title">4. Charmander</h2>
-                  <p className="card-subtitle">fire</p>
-                </li>
-              </ul>
-            </div>
-
-          </div>
-          <div className="row">
-            <div className="col-md-3">
-              <ul class="pokedex">
-                <li className="card grass" style={{ backgroundColor: "#DEFDE0" }}>
-                  <Link to="/poke/pokecard"><img className="card-image" alt="bulbasaur" src={one} /></Link>
-                  <h2 className="card-title">1. Bulbasaur</h2>
-                  <p className="card-subtitle">grass | poison</p>
-                </li>
-              </ul>
-            </div>
-            <div className="col-md-3">
-              <ul class="pokedex">
-                <li className="card grass" style={{ backgroundColor: "#DEFDE0" }}>
-                  <Link to="/poke/pokecard"><img className="card-image" alt="" src={two} /></Link>
-                  <h2 className="card-title">2. Ivysaur</h2>
-                  <p className="card-subtitle">grass | poison</p>
-                </li>
-              </ul>
-            </div>
-            <div className="col-md-3">
-              <ul class="pokedex">
-                <li className="card grass" style={{ backgroundColor: "#DEFDE0" }}>
-                  <Link to="/poke/pokecard"><img className="card-image" alt="" src={three} /></Link>
-                  <h2 className="card-title">3. Venusaur</h2>
-                  <p className="card-subtitle">grass | poison</p>
-                </li>
-              </ul>
-            </div>
-            <div className="col-md-3">
-              <ul class="pokedex">
-                <li className="card fire" style={{ backgroundColor: "#FDDFDF" }}>
-                  <Link to="/poke/pokecard"><img className="card-image" alt="" src={four} /></Link>
-                  <h2 className="card-title">4. Charmander</h2>
-                  <p className="card-subtitle">fire</p>
-                </li>
-              </ul>
-            </div>
-
-          </div>
-          <div className="row">
-            <div className="col-md-3">
-              <ul class="pokedex">
-                <li className="card grass" style={{ backgroundColor: "#DEFDE0" }}>
-                  <Link to="/poke/pokecard"><img className="card-image" alt="bulbasaur" src={one} /></Link>
-                  <h2 className="card-title">1. Bulbasaur</h2>
-                  <p className="card-subtitle">grass | poison</p>
-                </li>
-              </ul>
-            </div>
-            <div className="col-md-3">
-              <ul class="pokedex">
-                <li className="card grass" style={{ backgroundColor: "#DEFDE0" }}>
-                  <Link to="/poke/pokecard"><img className="card-image" alt="" src={two} /></Link>
-                  <h2 className="card-title">2. Ivysaur</h2>
-                  <p className="card-subtitle">grass | poison</p>
-                </li>
-              </ul>
-            </div>
-            <div className="col-md-3">
-              <ul class="pokedex">
-                <li className="card grass" style={{ backgroundColor: "#DEFDE0" }}>
-                  <Link to="/poke/pokecard"><img className="card-image" alt="" src={three} /></Link>
-                  <h2 className="card-title">3. Venusaur</h2>
-                  <p className="card-subtitle">grass | poison</p>
-                </li>
-              </ul>
-            </div>
-            <div className="col-md-3">
-              <ul class="pokedex">
-                <li className="card fire" style={{ backgroundColor: "#FDDFDF" }}>
-                  <Link to="/poke/pokecard"><img className="card-image" alt="" src={four} /></Link>
-                  <h2 className="card-title">4. Charmander</h2>
-                  <p className="card-subtitle">fire</p>
-                </li>
-              </ul>
-            </div>
-
-          </div>
-          <div className="row">
-            <div className="col-md-3">
-              <ul class="pokedex">
-                <li className="card grass" style={{ backgroundColor: "#DEFDE0" }}>
-                  <Link to="/poke/pokecard"><img className="card-image" alt="bulbasaur" src={one} /></Link>
-                  <h2 className="card-title">1. Bulbasaur</h2>
-                  <p className="card-subtitle">grass | poison</p>
-                </li>
-              </ul>
-            </div>
-            <div className="col-md-3">
-              <ul class="pokedex">
-                <li className="card grass" style={{ backgroundColor: "#DEFDE0" }}>
-                  <Link to="/poke/pokecard"><img className="card-image" alt="" src={two} /></Link>
-                  <h2 className="card-title">2. Ivysaur</h2>
-                  <p className="card-subtitle">grass | poison</p>
-                </li>
-              </ul>
-            </div>
-            <div className="col-md-3">
-              <ul class="pokedex">
-                <li className="card grass" style={{ backgroundColor: "#DEFDE0" }}>
-                  <Link to="/poke/pokecard"><img className="card-image" alt="" src={three} /></Link>
-                  <h2 className="card-title">3. Venusaur</h2>
-                  <p className="card-subtitle">grass | poison</p>
-                </li>
-              </ul>
-            </div>
-            <div className="col-md-3">
-              <ul class="pokedex">
-                <li className="card fire" style={{ backgroundColor: "#FDDFDF" }}>
-                  <Link to="/poke/pokecard"><img className="card-image" alt="" src={four} /></Link>
-                  <h2 className="card-title">4. Charmander</h2>
-                  <p className="card-subtitle">fire</p>
-                </li>
-              </ul>
-            </div>
           </div> */}
+
           <div className="row">
               <div className="col-12">
                 <ReactPaginate/>
