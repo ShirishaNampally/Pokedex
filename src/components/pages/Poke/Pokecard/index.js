@@ -1,6 +1,5 @@
 import { React, useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
-import one from '../../../images/Blog/001.png';
 import '../style.css';
 import Table from 'react-bootstrap/Table';
 import typesToColors from '../../../../utils/typesToColors';
@@ -10,9 +9,9 @@ import Axios from "axios";
 const Pokedex = require("pokeapi-js-wrapper")
 const P = new Pokedex.Pokedex()
 
-function PokeCard({match}) {
+function PokeCard({ match }) {
 
-    
+
     console.log("Test")
 
     const [details, setDetails] = useState();
@@ -21,21 +20,21 @@ function PokeCard({match}) {
         Axios(`https://pokeapi.co/api/v2/pokemon/${match.params.id}`, {
             method: "get"
         })
-        .then((response) => {
-            console.log("Test")
-            console.log(response);
-            setDetails(response.data);
-        })
-        .catch((error) => {
-            console.log(error);
-        })
+            .then((response) => {
+                console.log("Test")
+                console.log(response);
+                setDetails(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
     }
 
     useEffect(() => {
         preload();
     }, []);
 
-    
+
     return (
         <div>
             {/* section1 */}
@@ -48,27 +47,36 @@ function PokeCard({match}) {
                         <Table striped bordered hover variant="dark">
                             <tbody>
                                 <tr>
-                                {/* <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"} alt="pokemon" /> */}
-                                        {/* <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"} alt="pokemon" /> */}
+                                    {/* <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"} alt="pokemon" /> */}
+                                    {/* <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"} alt="pokemon" /> */}
                                     <td>ID:</td>
                                     <td>{details && details.id}</td>
                                 </tr>
                                 <tr>
                                     <td>Abilities:</td>
-                                    <td>A strange seed was planted on its back at birth.The plant sprouts and grows with this POKéMON.</td>
+                                    {details && details.abilities.map((abilities) => (
+                                        <td><div>{abilities.ability.name}</div>
+                                        </td>
+                                    ))}
                                 </tr>
-                                
+
                                 <tr>
                                     <td>Form:</td>
-                                    <td>bulbasaur evolves into ivysaur</td>
-                                </tr> 
+                                    {details && details.forms.map((forms) => (
+                                        <td><div>{forms.name}</div>
+                                        </td>
+                                    ))}
+                                </tr>
                                 <tr>
                                     <td>height:</td>
                                     <td>{details && details.height}</td>
                                 </tr>
                                 <tr>
                                     <td>Moves:</td>
-                                    <td>bulbasaur evolves into ivysaur</td>
+                                    {details && details.moves.map((moves) => (
+                                        <td><div>{moves.move.name}</div>
+                                        </td>
+                                    ))}
                                 </tr>
                                 <tr>
                                     <td>species:</td>
@@ -86,7 +94,12 @@ function PokeCard({match}) {
                                 <tr>
                                     <td>Type(s):</td>
                                     {/* <td style={{background: typesToColors[details.types.type] }}>{details && details.types.type}</td> */}
-                                    <td>grass</td>
+                                    {/* <td>grass</td> */}
+                                    {details && details.types.map((types) => (
+                                        <td><div style={{background: typesToColors[types.type.name] }}>{types.type.name}</div>
+                                            {/* <div>{types.base_stat}</div> */}
+                                        </td>
+                                    ))}
                                 </tr>
                                 <tr>
                                     <td>weight:</td>
@@ -94,17 +107,21 @@ function PokeCard({match}) {
                                 </tr>
                                 <tr>
                                     <td>stats:</td>
-                                    <td>{details && details.stats.length}</td>
+                                    {details && details.stats.map((stat) => (
+                                        <td><div>{stat.stat.name}</div>
+                                            <div>{stat.base_stat}</div>
+                                        </td>
+                                    ))}
                                 </tr>
-                                
-                                
+
+
                             </tbody>
                         </Table>
 
                     </div>
 
                 </div>
-            </section><br/><br/><br/><br/><br/><br/><br/>
+            </section><br /><br /><br /><br /><br /><br /><br />
         </div>
     );
 }

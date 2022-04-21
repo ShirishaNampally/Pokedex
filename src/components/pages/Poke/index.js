@@ -1,9 +1,5 @@
 import { React, useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
-import one from '../../images/Blog/001.png';
-import two from '../../images/Blog/002.png';
-import three from '../../images/Blog/003.png';
-import four from '../../images/Blog/004.png';
 import './style.css';
 // import PaginatedItems from '../../../pagination';
 
@@ -15,6 +11,7 @@ import Axios from "axios";
 
 
 function Poke() {
+
   const zeroFill = (number, width) => {
     width -= number.toString().length;
     if (width > 0) {
@@ -70,7 +67,6 @@ function Poke() {
                     {/* <Link to={(`/poke/${index+1}`)}><img className="card-image" alt="bulbasaur" src={(`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${index+1}.png`)} /></Link> */}
                     <Link to={(`/poke/${index + 1}`)}><img className="card-image" alt="bulbasaur" src={(`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${zeroFill(index + 1, 3)}.png`)} /></Link>
                     <h2 className="card-title">{pokemon.name}</h2>
-                    {/* <p className="card-subtitle">grass | poison</p> */}
                   </li>
                 </ul>
               </div>
@@ -127,7 +123,7 @@ function Poke() {
         {/* <div id="container">
         <PaginatedItems itemsPerPage={4} />
       </div> */}
-      <div class="btn-container text-center">
+        <div class="btn-container text-center">
           <button class="btn next-btn">Previous</button>
           <button class="page-btn null">1</button>
           <button class="page-btn null">2</button>
