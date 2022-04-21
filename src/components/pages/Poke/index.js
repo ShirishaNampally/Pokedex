@@ -64,7 +64,6 @@ function Poke() {
               <div className="col-md-3">
                 <ul class="pokedex">
                   <li className="card grass">
-                    {/* <Link to={(`/poke/${index+1}`)}><img className="card-image" alt="bulbasaur" src={(`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${index+1}.png`)} /></Link> */}
                     <Link to={(`/poke/${index + 1}`)}><img className="card-image" alt="bulbasaur" src={(`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${zeroFill(index + 1, 3)}.png`)} /></Link>
                     <h2 className="card-title">{pokemon.name}</h2>
                   </li>

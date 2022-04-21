@@ -47,8 +47,6 @@ function PokeCard({ match }) {
                         <Table striped bordered hover variant="white">
                             <tbody>
                                 <tr>
-                                    {/* <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"} alt="pokemon" /> */}
-                                    {/* <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"} alt="pokemon" /> */}
                                     <td>ID:</td>
                                     <td>{details && details.id}</td>
                                 </tr>
@@ -93,11 +91,8 @@ function PokeCard({ match }) {
                                 </tr>
                                 <tr>
                                     <td>Type(s):</td>
-                                    {/* <td style={{background: typesToColors[details.types.type] }}>{details && details.types.type}</td> */}
-                                    {/* <td>grass</td> */}
                                     {details && details.types.map((types) => (
                                         <td><div style={{background: typesToColors[types.type.name] }}>{types.type.name}</div>
-                                            {/* <div>{types.base_stat}</div> */}
                                         </td>
                                     ))}
                                 </tr>
