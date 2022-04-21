@@ -176,3 +176,70 @@ h1 {
     background-position: 200% center;
   }
 }
+
+  /*
+  =============== 
+  Pagination
+  ===============
+  */
+  .followers {
+	width: 90vw;
+	max-width: var(--max-width);
+	margin: 5rem auto;
+  }
+  
+  .btn {
+	padding: 0.35rem 0.75rem;
+	letter-spacing: 1.6px;
+	font-size: 0.75rem;
+	color: #fff;
+	background: #c48d7b;
+	border-radius: var(--radius);
+	border-color: transparent;
+	text-transform: uppercase;
+	transition: var(--transition);
+	cursor: pointer;
+  }
+  .btn:hover {
+	background-color: #fcb69f;
+  }
+  
+  .btn-container {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+  }
+  .page-btn {
+	width: 2rem;
+	height: 2rem;
+	background: #c48d7b;
+	border-color: transparent;
+	border-radius: 50%;
+	cursor: pointer;
+	margin: 0.5rem;
+	transition: var(--transition);
+  }
+  .active-btn {
+	background: #c0775f;
+	color: var(--clr-white);
+  }
+  .prev-btn,
+  .next-btn {
+	background: transparent;
+	border-color: transparent;
+	font-weight: bold;
+	text-transform: capitalize;
+	letter-spacing: var(--spacing);
+	margin: 0.5rem;
+	font-size: 1rem;
+	cursor: pointer;
+	color: rgb(100, 100, 100);
+  }
+  
+  @media screen and (min-width: 775px) {
+	.btn-container {
+	  margin: 0 auto;
+	  max-width: 700px;
+	}
+  }
+  

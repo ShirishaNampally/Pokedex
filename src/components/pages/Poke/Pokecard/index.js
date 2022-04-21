@@ -12,6 +12,7 @@ const P = new Pokedex.Pokedex()
 
 function PokeCard({match}) {
 
+    
     console.log("Test")
 
     const [details, setDetails] = useState();
@@ -34,7 +35,6 @@ function PokeCard({match}) {
         preload();
     }, []);
 
-
     
     return (
         <div>
@@ -50,30 +50,43 @@ function PokeCard({match}) {
                                 <tr>
                                 {/* <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"} alt="pokemon" /> */}
                                         {/* <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"} alt="pokemon" /> */}
-                                    
                                     <td>ID:</td>
                                     <td>{details && details.id}</td>
                                 </tr>
                                 <tr>
-                                    <td>Description:</td>
+                                    <td>Abilities:</td>
                                     <td>A strange seed was planted on its back at birth.The plant sprouts and grows with this POKéMON.</td>
                                 </tr>
+                                
                                 <tr>
-                                    <td>Type(s):</td>
-                                    <td style={{background: typesToColors[details.types.type] }}>{details && details.types.type}</td>
-                                </tr>
-                                <tr>
-                                    <td>Evolutions:</td>
+                                    <td>Form:</td>
                                     <td>bulbasaur evolves into ivysaur</td>
                                 </tr> 
+                                <tr>
+                                    <td>height:</td>
+                                    <td>{details && details.height}</td>
+                                </tr>
+                                <tr>
+                                    <td>Moves:</td>
+                                    <td>bulbasaur evolves into ivysaur</td>
+                                </tr>
                                 <tr>
                                     <td>species:</td>
                                     <td>{details && details.species.name}</td>
                                 </tr>
                                 <tr>
                                     <td>sprites:</td>
-                                    <td><img src={details && details.sprites.back_default} alt="pokemon back" />
-                                        <img src={details && details.sprites.front_default} alt="pokemon back" /></td>
+                                    <td>
+                                        <img src={details && details.sprites.back_default} alt="pokemon back" />
+                                        <img src={details && details.sprites.front_default} alt="pokemon back" />
+                                        <img src={details && details.sprites.back_shiny} alt="pokemon back" />
+                                        <img src={details && details.sprites.front_shiny} alt="pokemon back" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Type(s):</td>
+                                    {/* <td style={{background: typesToColors[details.types.type] }}>{details && details.types.type}</td> */}
+                                    <td>grass</td>
                                 </tr>
                                 <tr>
                                     <td>weight:</td>
@@ -83,10 +96,7 @@ function PokeCard({match}) {
                                     <td>stats:</td>
                                     <td>{details && details.stats.length}</td>
                                 </tr>
-                                <tr>
-                                    <td>height:</td>
-                                    <td>{details && details.height}</td>
-                                </tr>
+                                
                                 
                             </tbody>
                         </Table>

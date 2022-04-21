@@ -1,12 +1,11 @@
 import { React, useEffect, useState } from "react";
-import ReactPaginate from '../../pagination';
 import { Link } from 'react-router-dom';
 import one from '../../images/Blog/001.png';
 import two from '../../images/Blog/002.png';
 import three from '../../images/Blog/003.png';
 import four from '../../images/Blog/004.png';
 import './style.css';
-// import ReactPaginate from 'react-paginate';
+// import PaginatedItems from '../../../pagination';
 
 import Axios from "axios";
 
@@ -16,7 +15,6 @@ import Axios from "axios";
 
 
 function Poke() {
-
   const zeroFill = (number, width) => {
     width -= number.toString().length;
     if (width > 0) {
@@ -27,24 +25,25 @@ function Poke() {
 
   const [results, setResults] = useState([]);
 
-    const preload = () => {
-        Axios("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20", {
-            method: "get"
-        })
-        .then((response) => {
-            console.log(response);
-            setResults(response.data.results);
-        })
-        .catch((error) => {
-            console.log(error);
-        })
-    }
+  const preload = () => {
+    Axios("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20", {
+      method: "get"
+    })
+      .then((response) => {
+        console.log(response);
+        setResults(response.data.results);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
 
-    useEffect(() => {
-        preload();
-    }, []);
+  useEffect(() => {
+    preload();
+  }, []);
 
-    
+
+
 
   return (
     <div>
@@ -64,18 +63,18 @@ function Poke() {
 
           {/* list */}
           <div className="row">
-          {results && results.map((pokemon, index) => (
-            <div className="col-md-3">
-            <ul class="pokedex">
-              <li className="card grass">
-                {/* <Link to={(`/poke/${index+1}`)}><img className="card-image" alt="bulbasaur" src={(`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${index+1}.png`)} /></Link> */}
-                <Link to={(`/poke/${index+1}`)}><img className="card-image" alt="bulbasaur" src={(`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${zeroFill(index+1,3)}.png`)} /></Link>
-                <h2 className="card-title">{pokemon.name}</h2>
-                {/* <p className="card-subtitle">grass | poison</p> */}
-              </li>
-            </ul>
-          </div>
-          ))}
+            {results && results.map((pokemon, index) => (
+              <div className="col-md-3">
+                <ul class="pokedex">
+                  <li className="card grass">
+                    {/* <Link to={(`/poke/${index+1}`)}><img className="card-image" alt="bulbasaur" src={(`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${index+1}.png`)} /></Link> */}
+                    <Link to={(`/poke/${index + 1}`)}><img className="card-image" alt="bulbasaur" src={(`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${zeroFill(index + 1, 3)}.png`)} /></Link>
+                    <h2 className="card-title">{pokemon.name}</h2>
+                    {/* <p className="card-subtitle">grass | poison</p> */}
+                  </li>
+                </ul>
+              </div>
+            ))}
           </div>
 
 
@@ -119,15 +118,29 @@ function Poke() {
             </div>
           </div> */}
 
-          <div className="row">
+          {/* <div className="row">
               <div className="col-12">
-                <ReactPaginate/>
+                <PaginatedItems/>
               </div>
-            </div>
+            </div> */}
         </div>
-
+        {/* <div id="container">
+        <PaginatedItems itemsPerPage={4} />
+      </div> */}
+      <div class="btn-container text-center">
+          <button class="btn next-btn">Previous</button>
+          <button class="page-btn null">1</button>
+          <button class="page-btn null">2</button>
+          <button class="page-btn null">3</button>
+          <button class="page-btn null">4</button>
+          <button class="page-btn null">5</button>
+          <button class="page-btn null">6</button>
+          <button class="page-btn null">7</button>
+          <button class="page-btn active-btn">8</button>
+          <button class="page-btn null">9</button>
+          <button class="btn next-btn">Next</button>
+        </div>
       </section>
-      {/* <div id="container"><ReactPaginate /></div> */}
 
     </div>
   );
