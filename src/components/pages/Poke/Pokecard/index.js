@@ -41,10 +41,10 @@ function PokeCard({ match }) {
             <section>
                 <div className="container">
                     <div className="row">
-                        <div class="col-12">
+                        <div class="col-md-12">
                             <h2>{details && details.name}</h2>
                         </div>
-                        <Table striped bordered hover variant="dark">
+                        <Table striped bordered hover variant="white">
                             <tbody>
                                 <tr>
                                     {/* <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"} alt="pokemon" /> */}
