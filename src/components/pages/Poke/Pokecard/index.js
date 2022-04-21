@@ -35,6 +35,7 @@ function PokeCard({match}) {
     }, []);
 
 
+    
     return (
         <div>
             {/* section1 */}
@@ -59,7 +60,7 @@ function PokeCard({match}) {
                                 </tr>
                                 <tr>
                                     <td>Type(s):</td>
-                                    <td>grass</td>
+                                    <td style={{background: typesToColors[details.types.type] }}>{details && details.types.type}</td>
                                 </tr>
                                 <tr>
                                     <td>Evolutions:</td>
